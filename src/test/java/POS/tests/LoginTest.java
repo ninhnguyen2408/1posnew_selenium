@@ -1,5 +1,6 @@
 package POS.tests;
 
+import POS.pages.DashboardPage;
 import POS.pages.LoginPage;
 import common.BaseTest;
 import constants.ConfigData;
@@ -44,4 +45,4 @@ public class LoginTest extends BaseTest {
         loginPage.loginCMS(ConfigData.Email, "");
         loginPage.verifyNullPassword();
     }
-
+}

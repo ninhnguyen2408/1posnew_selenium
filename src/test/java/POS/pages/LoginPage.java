@@ -20,24 +20,24 @@ public class LoginPage {
         ActionKeywords.assertEquals(ActionKeywords.getTextElement(headerPage), "Đăng nhập", "NOT the Login page");
     }
 
-//    public DashboardPage loginCMS(String email, String password) {
-//        getBrowser();
-//        ActionKeywords.sendKeys(inputEmail, email);
-//        ActionKeywords.sendKeys(inputPassword, password);
-//        ActionKeywords.clickElement(buttonLogin);
-//        ActionKeywords.waitForPageLoaded();
-//        return new DashboardPage();
-//    }
-//
-//    public DashboardPage loginCMS() {
-//        getBrowser();
-//        ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
-//        ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
-//        ActionKeywords.clickElement(buttonLogin);
-//        ActionKeywords.waitForPageLoaded();
-//        verifyLoginSucess();
-//        return new DashboardPage();
-//    }
+    public DashboardPage loginCMS(String email, String password) {
+        getBrowser();
+        ActionKeywords.sendKeys(inputEmail, email);
+        ActionKeywords.sendKeys(inputPassword, password);
+        ActionKeywords.clickElement(buttonLogin);
+        ActionKeywords.waitForPageLoaded();
+        return new DashboardPage();
+    }
+
+    public DashboardPage loginCMS() {
+        getBrowser();
+        ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
+        ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
+        ActionKeywords.clickElement(buttonLogin);
+        ActionKeywords.waitForPageLoaded();
+        verifyLoginSucess();
+        return new DashboardPage();
+    }
 
     public void verifyNullEmail() {
         Assert.assertTrue(ActionKeywords.verifyHTML5RequiredField(inputEmail), "Email is NOT a required field");

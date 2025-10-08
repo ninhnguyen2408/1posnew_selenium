@@ -36,4 +36,70 @@ public class PropertiesHelper {
             return new Properties();
         }
     }
+
+    // Read 1 File: truyền vào đường link File cụ thể
+    public static void setFile(String relPropertiesFilePath) {
+        properties = new Properties();
+        try {
+            linkFile = SystemHelper.getCurrentDir() + relPropertiesFilePath;
+            file = new FileInputStream(linkFile);
+            properties.load(file);
+            file.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // lấy file từ biến toàn cục
+    public static void setDefaultFile() {
+        properties = new Properties();
+        try {
+            linkFile = SystemHelper.getCurrentDir() + relPropertiesFilePathDefault;
+            file = new FileInputStream(linkFile);
+            properties.load(file);
+            file.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // lấy giá trị thông qua key (của file)
+    public static String getValue(String key) {
+        String value = null;
+        try {
+            if (file == null) {
+                properties = new Properties();
+                linkFile = SystemHelper.getCurrentDir() + relPropertiesFilePathDefault;
+                file = new FileInputStream(linkFile);
+                properties.load(file);
+                file.close();
+            }
+            // Lấy giá trị từ file đã Set
+            value = properties.getProperty(key);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return value;
+    }
+
+    // Ghi file
+    public static void setValue(String key, String keyValue) {
+        try {
+            if (file == null) {
+                properties = new Properties();
+                file = new FileInputStream(SystemHelper.getCurrentDir() + relPropertiesFilePathDefault);
+                properties.load(file);
+                file.close();
+                out = new FileOutputStream(SystemHelper.getCurrentDir() + relPropertiesFilePathDefault);   //ghi file
+            }
+            //Ghi vào cùng file Prop với file lấy ra
+            out = new FileOutputStream(linkFile);
+            System.out.println(linkFile);
+            properties.setProperty(key, keyValue);
+            properties.store(out, null); // lưu giá trị vừa set vào (đường link) file
+            out.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
