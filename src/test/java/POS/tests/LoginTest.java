@@ -5,15 +5,26 @@ import POS.pages.LoginPage;
 import common.BaseTest;
 import constants.ConfigData;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import reports.ExtentTestManager;
+
+import java.lang.reflect.Method;
 
 public class LoginTest extends BaseTest {
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
 
+
+    @BeforeMethod
+    public void setup(Method method) {
+        // Tạo test mới cho mỗi test case
+        ExtentTestManager.saveToReport(method.getName(), "Mô tả test " + method.getName());
+    }
+
     @Test
     public void testLoginSucess() {
-        dashboardPage = loginPage.loginCMS();
+        loginPage.loginCMS();
     }
 
     @Test

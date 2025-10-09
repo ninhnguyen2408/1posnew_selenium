@@ -45,6 +45,12 @@ public class ExtentTestManager {
     }
 
     public static void logMessage(Status status, String message) {
-        getTest().log(status, message);
+        ExtentTest test = getTest();
+        if (test == null) {
+            System.err.println("[ExtentTestManager] Test not initialized for thread " + Thread.currentThread().getId());
+            return;
+        }
+        test.log(status, message);
     }
+
 }

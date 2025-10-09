@@ -8,7 +8,7 @@ import drivers.DriverManager;
 
 public class LoginPage {
 
-    private By headerPage = By.xpath("//h1[normalize-space()='Đăng nhập']");
+//    private By headerPage = By.xpath("//h1[normalize-space()='Đăng nhập']");
     private By inputEmail = By.xpath("//input[@name='email']");
     private By inputPassword = By.xpath("//input[@name='password']");
     private By buttonLogin = By.xpath("//button[normalize-space()='Đăng nhập']");
@@ -17,7 +17,7 @@ public class LoginPage {
     private void getBrowser(){
         ActionKeywords.openURL(ConfigData.URL);
         ActionKeywords.waitForPageLoaded();
-        ActionKeywords.assertEquals(ActionKeywords.getTextElement(headerPage), "Đăng nhập", "NOT the Login page");
+        ActionKeywords.assertEquals(ActionKeywords.getTextElement(buttonLogin), "Đăng nhập", "NOT the Login page");
     }
 
     public DashboardPage loginCMS(String email, String password) {
@@ -64,7 +64,8 @@ public class LoginPage {
     public void verifyLoginFail() {
         ActionKeywords.checkElementDisplayed(alertMessage);
         Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "Fail, NOT on the Login page");
-        ActionKeywords.assertEquals(ActionKeywords.getTextElement(alertMessage), "Invalid login credentials", "Content of alert message not match");
+        ActionKeywords.assertEquals(ActionKeywords.getTextElement(alertMessage), "Đăng nhập thất bại\n" +
+                "Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần", "Content of alert message not match");
         ActionKeywords.sleep(2);
     }
 
