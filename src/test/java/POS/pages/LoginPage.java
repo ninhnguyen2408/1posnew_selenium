@@ -41,19 +41,20 @@ public class LoginPage {
 
     public void verifyNullEmail() {
         Assert.assertTrue(ActionKeywords.verifyHTML5RequiredField(inputEmail), "Email is NOT a required field");
-        ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputEmail), "Please fill out this field.", "Validation message of Email not match");
+        ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputEmail), "Vui lòng nhập tên đăng nhập", "Validation message of Email not match");
         ActionKeywords.sleep(2);
     }
 
     public void verifyNullPassword() {
         Assert.assertTrue(ActionKeywords.verifyHTML5RequiredField(inputPassword), "Password  is NOT a required field");
-        ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputPassword), "Please fill out this field.", "Validation message of Password not match");
+        ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputPassword), "Vui lòng nhập mật khẩu", "Validation message of Password not match");
         ActionKeywords.sleep(2);
     }
 
     public void incorrectFormatEmail() {
         Assert.assertTrue(ActionKeywords.verifyHTML5RequiredField(inputEmail), "Validation message of incorrect format Email NOT exists");
-        ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputEmail), "Please include an '@' in the email address. 'abc' is missing an '@'.", "Validation message of incorrect format Email not match");
+        ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputEmail), "Đăng nhập thất bại\n" +
+                "Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần", "Validation message of incorrect format Email not match");
         ActionKeywords.sleep(2);
     }
 
