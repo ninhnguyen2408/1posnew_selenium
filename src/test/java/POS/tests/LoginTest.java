@@ -22,38 +22,58 @@ public class LoginTest extends BaseTest {
         ExtentTestManager.saveToReport(method.getName(), "Mô tả test " + method.getName());
     }
 
+
     @Test
-    public void testLoginSucess() {
+    public void testLoginSuccess() {
         loginPage.loginCMS();
+    }
+    
+    @Test
+    public void testLoginAndSelectManagementSystem() {
+        loginPage.loginWithManagementSystem();
+    }
+    
+    @Test
+    public void testLoginAndSelectSalesSystem() {
+        loginPage.loginWithSalesSystem();
+    }
+    
+    @Test
+    public void testVerifySystemSelectionPopup() {
+        loginPage.loginCMS();
+        loginPage.verifySystemSelectionPopup();
     }
 
     @Test
-    public void testLoginWithEmailInvalid() {
+    public void testLoginWithInvalidEmail() {
         loginPage.loginCMS("admin@example111.com", ConfigData.Password);
         loginPage.verifyLoginFail();
     }
 
     @Test
-    public void testLoginWithPasswordInvalid() {
+    public void testLoginWithInvalidPassword() {
         loginPage.loginCMS(ConfigData.Email, "568690");
+        loginPage.verifyLoginFail();
+    }
+    
+    @Test
+    public void testLoginWithBothInvalidCredentials() {
+        loginPage.loginCMS("invalid@email.com", "wrongpassword");
         loginPage.verifyLoginFail();
     }
 
     @Test
-    public void testEmailNull() {
-        loginPage.loginCMS("", ConfigData.Password);
-        loginPage.verifyNullEmail();
+    public void testLoginWithEmptyEmail() {
+        loginPage.testEmptyEmail();
     }
 
     @Test
-    public void testIncorrectFormatEmail() {
-        loginPage.loginCMS("abc", ConfigData.Password);
-        loginPage.incorrectFormatEmail();
+    public void testLoginWithEmptyPassword() {
+        loginPage.testEmptyPassword();
     }
-
+    
     @Test
-    public void testPasswordNull() {
-        loginPage.loginCMS(ConfigData.Email, "");
-        loginPage.verifyNullPassword();
+    public void testLoginWithBothEmptyFields() {
+        loginPage.testBothEmptyFields();
     }
 }
