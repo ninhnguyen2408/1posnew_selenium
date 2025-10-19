@@ -1,9 +1,9 @@
-package POS.pages;
+package POS.pages.common;
 
 import keyworks.ActionKeywords;
 import org.openqa.selenium.By;
 
-public class DashboardPage {
+public class DashboardPage extends BasePage {
     
     // Dashboard elements
     private By dashboardRevenueReport = By.xpath("(//div[h2[normalize-space(text())='Báo cáo theo dõi doanh thu']])[1]");

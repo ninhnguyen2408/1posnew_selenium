@@ -1,7 +1,7 @@
 package POS.tests;
 
-import POS.pages.DashboardPage;
-import POS.pages.LoginPage;
+import POS.pages.common.DashboardPage;
+import POS.pages.common.LoginPage;
 import common.BaseTest;
 import constants.ConfigData;
 

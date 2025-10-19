@@ -1,4 +1,4 @@
-package POS.pages;
+package POS.pages.common;
 
 import constants.ConfigData;
 import keyworks.ActionKeywords;
@@ -8,7 +8,6 @@ import drivers.DriverManager;
 
 public class LoginPage {
 
-//    private By headerPage = By.xpath("//h1[normalize-space()='Đăng nhập']");
     private By inputEmail = By.xpath("//input[@name='email']");
     private By inputPassword = By.xpath("//input[@name='password']");
     private By buttonLogin = By.xpath("//button[normalize-space()='Đăng nhập']");
@@ -79,14 +78,9 @@ public class LoginPage {
     }
 
     public void verifyNullEmail() {
-        // Click login button first to trigger validation
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
-        
-        // Check if we're still on login page (validation failed)
         Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "Should stay on login page when email is empty");
-        
-        // Try to check for validation message or required attribute
         if (ActionKeywords.verifyHTML5RequiredField(inputEmail)) {
             ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputEmail), "Vui lòng nhập tên đăng nhập", "Validation message of Email not match");
         }
@@ -94,24 +88,15 @@ public class LoginPage {
     }
 
     public void verifyNullPassword() {
-        // Click login button first to trigger validation
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
-        
-        // Check if we're still on login page (validation failed)
         Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "Should stay on login page when password is empty");
-        
-        // Try to check for validation message or required attribute
         if (ActionKeywords.verifyHTML5RequiredField(inputPassword)) {
             ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputPassword), "Vui lòng nhập mật khẩu", "Validation message of Password not match");
         }
         ActionKeywords.sleep(2);
     }
 
-    private void verifyLoginSuccess() {
-        Assert.assertFalse(DriverManager.getDriver().getCurrentUrl().contains("login"), "Login fail");
-    }
-    
     private void verifySalesSystemURL() {
         ActionKeywords.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://hdseafood.1erp.vn/choose-store", "Not on Sales System URL");
     }
@@ -153,5 +138,4 @@ public class LoginPage {
                 "Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần", "Content of alert message not match");
         ActionKeywords.sleep(2);
     }
-
 }
