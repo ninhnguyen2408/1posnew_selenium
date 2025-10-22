@@ -91,9 +91,6 @@ public class BasePage {
     }
     
     public void navigateToCustomer() {
-        // First hover over Sales module to show dropdown
-        ActionKeywords.mouseHover(salesModule);
-        ActionKeywords.waitForElementVisible(customer);
         ActionKeywords.clickElement(customer);
         ActionKeywords.waitForPageLoaded();
     }

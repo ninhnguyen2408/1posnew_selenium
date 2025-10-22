@@ -2,6 +2,7 @@ package POS.pages.sales;
 
 import POS.pages.common.BasePage;
 import POS.testdata.CustomerTestData;
+import io.reactivex.rxjava3.functions.Action;
 import keyworks.ActionKeywords;
 import org.openqa.selenium.By;
 
@@ -17,11 +18,13 @@ public class CustomerPage extends BasePage {
     // Add Customer form elements
     private By cancelButton = By.xpath("//button[span[normalize-space(text())='Huỷ']]");
     private By saveCustomerButton = By.xpath("(//button[span[normalize-space(text())='Lưu thông tin']])[1]");
-    private By personRadiobutton = By.xpath("//label[span[normalize-space(text())='Cá nhân']]//input[@type='radio']");
-    private By companyRadiobutton = By.xpath("//label[span[normalize-space(text())='Công ty']]//input[@type='radio']");
+    private By personRadioButton = By.xpath("//label[contains(@class, 'ant-radio-wrapper')]//span[normalize-space()='Cá nhân']");
+    private By companyRadioButton = By.xpath("//label[contains(@class, 'ant-radio-wrapper')]//span[normalize-space()='Công ty']");
     private By imageUploadInput = By.xpath("//button[@type='button' and .//span[@aria-label='plus']]");
-    private By customerNameInput = By.xpath("//input[@name='name']");
-    //giới tính chưa có
+    private By customerNameInput = By.xpath("//input[@placeholder='Nhập tên']");
+    private By companyNameInput = By.xpath("//input[@placeholder='Nhập tên công ty']");
+    private By maleRadioButton = By.xpath("//label[.//span[normalize-space()='Nam']]//input[@type='radio']");
+    private By femaleRadioButton = By.xpath("//label[.//span[normalize-space()='Nữ']]//input[@type='radio']");
     private By identificationInput = By.xpath("//input[@name='identification']");
     private By selectDateOfBirth = By.xpath("//input[@placeholder='Chọn ngày sinh']");
     private By phoneNumberInput = By.xpath("//input[@name='phoneNumber']");
@@ -54,7 +57,9 @@ public class CustomerPage extends BasePage {
 
     public void addNewCustomer(String customerName, String phone, String email, String dateOfBirth, String identification, String taxCode, String address) {
         clickAddCustomerButton();
+        ActionKeywords.clickElement(personRadioButton);
         ActionKeywords.sendKeys(customerNameInput, customerName);
+        // ActionKeywords.clickElement(femaleRadioButton);
         ActionKeywords.sendKeys(phoneNumberInput, phone);
         ActionKeywords.sendKeys(emailInput, email);
         ActionKeywords.sendKeys(selectDateOfBirth, dateOfBirth);
@@ -62,12 +67,12 @@ public class CustomerPage extends BasePage {
         ActionKeywords.sendKeys(taxCodeInput, taxCode);
         ActionKeywords.sendKeys(addressInput, address);
         ActionKeywords.clickElement(saveCustomerButton);
-        ActionKeywords.waitForElementVisible(confirmButton);
+        ActionKeywords.clickElement(confirmButton);
         ActionKeywords.waitForPageLoaded();
     }
     
     // Method using TestData for valid individual customer
-    public void addValidIndividualCustomer() {
+    public void addValidCustomer() {
         String[] customerData = CustomerTestData.getValidIndividualCustomerData();
         addNewCustomer(customerData[0], customerData[1], customerData[2], customerData[3], customerData[4], customerData[5], customerData[6]);
     }
@@ -95,4 +100,5 @@ public class CustomerPage extends BasePage {
         By customerRow = By.xpath("//table//td[contains(text(),'" + customerName + "')]");
         ActionKeywords.checkElementDisplayed(customerRow);
     }
+
 }

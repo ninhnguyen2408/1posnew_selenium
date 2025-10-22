@@ -4,7 +4,6 @@ import POS.pages.common.DashboardPage;
 import POS.pages.common.LoginPage;
 import common.BaseTest;
 import constants.ConfigData;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import reports.ExtentTestManager;
