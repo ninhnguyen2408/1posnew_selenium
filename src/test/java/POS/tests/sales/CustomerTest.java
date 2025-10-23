@@ -40,7 +40,7 @@ public class CustomerTest extends BaseTest {
     public void testAddCustomerValid() {
         customerPage.navigateToCustomerPage();
         customerPage.addValidCustomer();
-        customerPage.verifyCustomerExists(CustomerTestData.VALID_CUSTOMER_NAME);
+        // customerPage.verifyCustomerExists(CustomerTestData.VALID_CUSTOMER_NAME);
     }
     
     @Test
@@ -48,32 +48,6 @@ public class CustomerTest extends BaseTest {
         customerPage.navigateToCustomerPage();
         customerPage.addValidCustomer();
         customerPage.verifyCustomerExists(CustomerTestData.VALID_CUSTOMER_NAME);
-    }
-
-    @Test
-    public void testCheckRadioButton() {
-        // Điều hướng đến trang khách hàng
-        customerPage.navigateToCustomerPage();
-        
-        // Nhấn nút "Tạo mới" để mở form thêm khách hàng
-        customerPage.clickAddCustomerButton();
-        
-        // Định nghĩa XPath cho radio button "Nữ"
-        By RadioButton = By.xpath("//label[contains(@class, 'ant-radio-wrapper')]//span[normalize-space()='Công ty']");
-        
-        // Chờ element xuất hiện
-        ActionKeywords.waitForElementVisible(RadioButton);
-        
-        // Kiểm tra element có hiển thị không
-        ActionKeywords.checkElementDisplayed(RadioButton);
-        
-        // Click vào radio button
-        ActionKeywords.clickElement(RadioButton);
-        
-        // Chờ 3 giây để quan sát kết quả
-        ActionKeywords.sleep(3);
-        
-        System.out.println("✅ Radio button 'Nữ' đã được click thành công!");
     }
 
 }

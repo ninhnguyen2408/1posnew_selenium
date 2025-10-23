@@ -23,19 +23,18 @@ public class CustomerPage extends BasePage {
     private By imageUploadInput = By.xpath("//button[@type='button' and .//span[@aria-label='plus']]");
     private By customerNameInput = By.xpath("//input[@placeholder='Nhập tên']");
     private By companyNameInput = By.xpath("//input[@placeholder='Nhập tên công ty']");
-    private By maleRadioButton = By.xpath("//label[.//span[normalize-space()='Nam']]//input[@type='radio']");
-    private By femaleRadioButton = By.xpath("//label[.//span[normalize-space()='Nữ']]//input[@type='radio']");
+    private By maleRadioButton = By.xpath("//label[.//span[normalize-space(text())='Nam']]");
+    private By femaleRadioButton = By.xpath("//label[.//span[normalize-space(text())='Nữ']]");
     private By identificationInput = By.xpath("//input[@name='identification']");
     private By selectDateOfBirth = By.xpath("//input[@placeholder='Chọn ngày sinh']");
     private By phoneNumberInput = By.xpath("//input[@name='phoneNumber']");
     private By emailInput = By.xpath("//input[@name='email']");
     private By taxCodeInput = By.xpath("//input[@name='taxCode']");
     private By addressInput = By.xpath("//input[@name='address']");
+    private By cityCombobox = By.xpath("//span[normalize-space(text())='Tỉnh/thành phố']");
+    private By wardCombobox = By.xpath("//input[@id='rc_select_1']");
     private By confirmButton = By.xpath("//button[span[text()='Xác nhận']]");
     private By closeButton = By.xpath("//button[span[text()='Đóng']]");
-    
-
-    
 
     
 
@@ -59,16 +58,20 @@ public class CustomerPage extends BasePage {
         clickAddCustomerButton();
         ActionKeywords.clickElement(personRadioButton);
         ActionKeywords.sendKeys(customerNameInput, customerName);
-        // ActionKeywords.clickElement(femaleRadioButton);
+        ActionKeywords.clickElement(femaleRadioButton);
         ActionKeywords.sendKeys(phoneNumberInput, phone);
         ActionKeywords.sendKeys(emailInput, email);
         ActionKeywords.sendKeys(selectDateOfBirth, dateOfBirth);
         ActionKeywords.sendKeys(identificationInput, identification);
         ActionKeywords.sendKeys(taxCodeInput, taxCode);
         ActionKeywords.sendKeys(addressInput, address);
+        
+        // ActionKeywords.selectDynamicDropdown(cityCombobox, cityCombobox, "Hồ Chí Minh");
+        // ActionKeywords.selectDynamicDropdown(wardCombobox, wardCombobox, "Phường 1");
+
         ActionKeywords.clickElement(saveCustomerButton);
         ActionKeywords.clickElement(confirmButton);
-        ActionKeywords.waitForPageLoaded();
+        ActionKeywords.sleep(2);
     }
     
     // Method using TestData for valid individual customer
