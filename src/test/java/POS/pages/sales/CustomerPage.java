@@ -21,8 +21,8 @@ public class CustomerPage extends BasePage {
     private By personRadioButton = By.xpath("//label[contains(@class, 'ant-radio-wrapper')]//span[normalize-space()='Cá nhân']");
     private By companyRadioButton = By.xpath("//label[contains(@class, 'ant-radio-wrapper')]//span[normalize-space()='Công ty']");
     private By imageUploadInput = By.xpath("//button[@type='button' and .//span[@aria-label='plus']]");
-    private By customerNameInput = By.xpath("//input[@placeholder='Nhập tên']");
-    private By companyNameInput = By.xpath("//input[@placeholder='Nhập tên công ty']");
+    private By nameInput = By.xpath("//input[@name='name']");
+    private By customerNameInput = By.xpath("//input[@name='customerName']");
     private By maleRadioButton = By.xpath("//label[.//span[normalize-space(text())='Nam']]");
     private By femaleRadioButton = By.xpath("//label[.//span[normalize-space(text())='Nữ']]");
     private By identificationInput = By.xpath("//input[@name='identification']");
@@ -57,7 +57,7 @@ public class CustomerPage extends BasePage {
     public void addNewCustomer(String customerName, String phone, String email, String dateOfBirth, String identification, String taxCode, String address) {
         clickAddCustomerButton();
         ActionKeywords.clickElement(personRadioButton);
-        ActionKeywords.sendKeys(customerNameInput, customerName);
+        ActionKeywords.sendKeys(nameInput, customerName);
         ActionKeywords.clickElement(femaleRadioButton);
         ActionKeywords.sendKeys(phoneNumberInput, phone);
         ActionKeywords.sendKeys(emailInput, email);
@@ -65,32 +65,39 @@ public class CustomerPage extends BasePage {
         ActionKeywords.sendKeys(identificationInput, identification);
         ActionKeywords.sendKeys(taxCodeInput, taxCode);
         ActionKeywords.sendKeys(addressInput, address);
-        
-        // ActionKeywords.selectDynamicDropdown(cityCombobox, cityCombobox, "Hồ Chí Minh");
-        // ActionKeywords.selectDynamicDropdown(wardCombobox, wardCombobox, "Phường 1");
 
         ActionKeywords.clickElement(saveCustomerButton);
         ActionKeywords.clickElement(confirmButton);
         ActionKeywords.sleep(2);
     }
     
+    // Method for adding company customer
+    public void addNewCompany(String companyName, String email, String phone, String customerName, String taxCode, String address) {
+        clickAddCustomerButton();
+        ActionKeywords.clickElement(companyRadioButton);
+        ActionKeywords.sendKeys(nameInput, companyName);
+        ActionKeywords.sendKeys(emailInput, email);
+        ActionKeywords.sendKeys(phoneNumberInput, phone);
+        ActionKeywords.sendKeys(customerNameInput, customerName);
+        ActionKeywords.clickElement(femaleRadioButton);
+        ActionKeywords.sendKeys(taxCodeInput, taxCode);
+        ActionKeywords.sendKeys(addressInput, address);
+        
+        ActionKeywords.clickElement(saveCustomerButton);
+        ActionKeywords.clickElement(confirmButton);
+        ActionKeywords.sleep(2);
+    }
+
     // Method using TestData for valid individual customer
     public void addValidCustomer() {
         String[] customerData = CustomerTestData.getValidIndividualCustomerData();
         addNewCustomer(customerData[0], customerData[1], customerData[2], customerData[3], customerData[4], customerData[5], customerData[6]);
     }
     
-    // Method using TestData for random customer
-    public void addRandomCustomer() {
-        addNewCustomer(
-            CustomerTestData.getRandomCustomerName(),
-            CustomerTestData.getRandomCustomerPhone(),
-            CustomerTestData.getRandomCustomerEmail(),
-            CustomerTestData.VALID_DATE_OF_BIRTH,
-            CustomerTestData.VALID_IDENTIFICATION,
-            CustomerTestData.VALID_TAX_CODE,
-            CustomerTestData.VALID_ADDRESS
-        );
+    // Method using TestData for valid company customer
+    public void addValidCompany() {
+        String[] companyData = CustomerTestData.getValidCompanyCustomerData();
+        addNewCompany(companyData[0], companyData[2], companyData[1], companyData[3], companyData[4], companyData[5]);
     }
     
     

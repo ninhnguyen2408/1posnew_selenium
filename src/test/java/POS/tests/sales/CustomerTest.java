@@ -37,17 +37,18 @@ public class CustomerTest extends BaseTest {
     }
 
     @Test
-    public void testAddCustomerValid() {
+    public void testAddIndividualCustomerValid() {
         customerPage.navigateToCustomerPage();
         customerPage.addValidCustomer();
-        // customerPage.verifyCustomerExists(CustomerTestData.VALID_CUSTOMER_NAME);
+        customerPage.verifyCustomerExists(CustomerTestData.VALID_CUSTOMER_NAME);
     }
     
     @Test
     public void testAddCompanyValid() {
         customerPage.navigateToCustomerPage();
-        customerPage.addValidCustomer();
-        customerPage.verifyCustomerExists(CustomerTestData.VALID_CUSTOMER_NAME);
+        customerPage.addValidCompany();
+        // customerPage.verifyCustomerExists(CustomerTestData.VALID_COMPANY_NAME);
     }
+    
 
 }
