@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import reports.ExtentTestManager;
+import utils.LogUtils;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -24,7 +25,7 @@ public class ActionKeywords {
 
     // Log console
     public static void logConsole(Object message) {
-//        LogUtils.info(message);
+        LogUtils.info(message);
     }
 
     // Open URL
@@ -98,9 +99,7 @@ public class ActionKeywords {
                 boolean res = false;
                 WebElement title = getWebElement(By.xpath("//tbody/tr[" + i + "]/td[" + column + "]"));
                 JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
-                js.executeScript("arguments[0].scrollIntoView(false);", title); // lăn chuột xuống
-
-//                        sleep(2);
+                js.executeScript("arguments[0].scrollIntoView(false);", title);
                 res = title.getText().toUpperCase().contains(value.toUpperCase());
                 logConsole("Row " + i + ": " + title.getText());
                 Assert.assertTrue(res, "Row " + i + " (" + title.getText() + ")" + "NOT contains the search value: " + value);
@@ -237,7 +236,7 @@ public class ActionKeywords {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 
-//        LogUtils.info("Upload File with Local Form: " + filePath);
+        LogUtils.info("Upload File with Local Form: " + filePath);
 //            if (ExtentTestManager.getTest() != null) {
 //                  logConsole("Upload File with Local Form: " + filePath);
 //            }
@@ -302,7 +301,7 @@ public class ActionKeywords {
     // getText alert
     public static String getTextAlert() {
         sleep(2);
-//        LogUtils.info("Get text ion alert: " + DriverManager.getDriver().switchTo().alert().getText());
+        LogUtils.info("Get text ion alert: " + DriverManager.getDriver().switchTo().alert().getText());
         return DriverManager.getDriver().switchTo().alert().getText();
     }
 
@@ -376,7 +375,7 @@ public class ActionKeywords {
         js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(by));
         //Click with JS
         js.executeScript("arguments[0].click();", getWebElement(by));
-//        LogUtils.info("Click on element with JS: " + by);
+        LogUtils.info("Click on element with JS: " + by);
     }
 
     // nhấn phím ENTER
@@ -409,7 +408,7 @@ public class ActionKeywords {
             WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Timeout), Duration.ofMillis(500));
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } catch (Throwable error) {
-//            LogUtils.error("Timeout waiting for the element Visible " + by.toString());
+            LogUtils.error("Timeout waiting for the element Visible " + by.toString());
             Assert.fail("Timeout waiting for the element Visible " + by.toString());
         }
     }
@@ -420,7 +419,7 @@ public class ActionKeywords {
             WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(seconds), Duration.ofMillis(500));
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } catch (Throwable error) {
-//            LogUtils.error("Timeout waiting for the element Visible " + by.toString());
+            LogUtils.error("Timeout waiting for the element Visible " + by.toString());
             Assert.fail("Timeout waiting for the element Visible " + by.toString());
         }
     }
@@ -431,7 +430,7 @@ public class ActionKeywords {
             WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Timeout), Duration.ofMillis(500));
             wait.until(ExpectedConditions.elementToBeClickable(by));
         } catch (Throwable error) {
-//            LogUtils.error("Timeout waiting for the element Clickable" + by.toString());
+            LogUtils.error("Timeout waiting for the element Clickable" + by.toString());
             Assert.fail("Timeout waiting for the element Clickable" + by.toString());
         }
     }
@@ -442,7 +441,7 @@ public class ActionKeywords {
             WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(seconds), Duration.ofMillis(500));
             wait.until(ExpectedConditions.elementToBeClickable(by));
         } catch (Throwable error) {
-//            LogUtils.error("Timeout waiting for the element Clickable" + by.toString());
+            LogUtils.error("Timeout waiting for the element Clickable" + by.toString());
             Assert.fail("Timeout waiting for the element Clickable" + by.toString());
         }
     }
@@ -453,7 +452,7 @@ public class ActionKeywords {
             WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Timeout), Duration.ofMillis(500));
             wait.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (Throwable error) {
-//            LogUtils.error("Element not exits " + by.toString());
+            LogUtils.error("Element not exits " + by.toString());
             Assert.fail("Element not exits " + by.toString());
         }
     }
@@ -464,7 +463,7 @@ public class ActionKeywords {
             WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(seconds), Duration.ofMillis(500));
             wait.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (Throwable error) {
-//            LogUtils.error("Element not exits " + by.toString());
+            LogUtils.error("Element not exits " + by.toString());
             Assert.fail("Element not exits " + by.toString());
         }
     }

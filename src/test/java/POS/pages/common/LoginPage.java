@@ -5,6 +5,7 @@ import keyworks.ActionKeywords;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import drivers.DriverManager;
+import utils.LogUtils;
 
 public class LoginPage {
 
@@ -18,30 +19,37 @@ public class LoginPage {
     private By systemSales = By.xpath("//div[normalize-space(text())='Hệ thống bán hàng']");
 
     private void getBrowser(){
+        LogUtils.info("Opening browser and navigating to URL: " + ConfigData.URL);
         ActionKeywords.openURL(ConfigData.URL);
         ActionKeywords.waitForPageLoaded();
         ActionKeywords.assertEquals(ActionKeywords.getTextElement(buttonLogin), "Đăng nhập", "NOT the Login page");
+        LogUtils.info("Successfully loaded login page");
     }
 
     public DashboardPage loginCMS(String email, String password) {
+        LogUtils.info("Attempting to login with email: " + email);
         getBrowser();
         ActionKeywords.sendKeys(inputEmail, email);
         ActionKeywords.sendKeys(inputPassword, password);
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
+        LogUtils.info("Login completed successfully");
         return new DashboardPage();
     }
 
     public DashboardPage loginCMS() {
+        LogUtils.info("Attempting to login with default credentials");
         getBrowser();
         ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
         ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
+        LogUtils.info("Login with default credentials completed successfully");
         return new DashboardPage();
     }
     
     public DashboardPage loginWithManagementSystem() {
+        LogUtils.info("Attempting to login and select Management System");
         getBrowser();
         ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
         ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
@@ -49,6 +57,7 @@ public class LoginPage {
         ActionKeywords.waitForPageLoaded();
         
         // Wait for popup and select Management System
+        LogUtils.info("Selecting Management System from popup");
         ActionKeywords.waitForElementVisible(systemManagement);
         ActionKeywords.clickElement(systemManagement);
         ActionKeywords.waitForPageLoaded();

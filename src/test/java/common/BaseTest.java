@@ -1,24 +1,29 @@
 package common;
 
-
 import drivers.DriverManager;
 //import listeners.TestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
+import utils.LogUtils;
+
+import java.lang.reflect.Method;
 
 //@Listeners(TestListener.class)
 public class BaseTest {
 
     @BeforeMethod
     @Parameters({"BROWSER"})
-    public void createDriver(@Optional("chrome") String browserName) {
+    public void createDriver(@Optional("chrome") String browserName, Method method) {
+        LogUtils.info("=== INITIALIZING BROWSER: " + browserName.toUpperCase() + " for test: " + method.getName() + " ===");
         WebDriver driver = setupBrowser(browserName);   //khởi tạo loại browser và gán vào driver
 //        WebDriver driver = setupBrowser(PropertiesHelper.getValue("browser"));
 
         DriverManager.setDriver(driver);    // mang giá trị driver đã khởi tạo vào trong ThreadLocal
+        LogUtils.info("Browser initialized successfully: " + browserName);
     }
 
     //Viết hàm trung gian để lựa chọn Browser cần chạy với giá trị tham số "browser" bên trên truyền vào
@@ -67,9 +72,21 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void closeDriver() {
+    public void closeDriver(ITestResult result) {
+        String testName = result.getMethod().getMethodName();
+        
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            LogUtils.info("=== TEST PASSED: " + testName + " ===");
+        } else if (result.getStatus() == ITestResult.FAILURE) {
+            LogUtils.error("=== TEST FAILED: " + testName + " ===");
+            LogUtils.error("Failure reason: " + result.getThrowable().getMessage());
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            LogUtils.warn("=== TEST SKIPPED: " + testName + " ===");
+        }
 
         //Screenshot and Record video in TestListener
+        LogUtils.info("Closing browser driver for test: " + testName);
         DriverManager.quit();
+        LogUtils.info("Browser driver closed successfully");
     }
 }

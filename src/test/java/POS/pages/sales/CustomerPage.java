@@ -6,7 +6,8 @@ import io.reactivex.rxjava3.functions.Action;
 import keyworks.ActionKeywords;
 import org.openqa.selenium.By;
 
-public class CustomerPage extends BasePage {
+public class
+CustomerPage extends BasePage {
     
     // Customer page elements
     private By customerTitle = By.xpath("//h2[normalize-space(text())='Quản lý khách hàng']");
