@@ -4,13 +4,18 @@ import POS.pages.common.DashboardPage;
 import POS.pages.common.LoginPage;
 import common.BaseTest;
 import constants.ConfigData;
+import listeners.TestListener;
+
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import reports.ExtentTestManager;
 import utils.LogUtils;
 
 import java.lang.reflect.Method;
 
+
+@Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();

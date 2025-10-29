@@ -1,4 +1,5 @@
 package reports;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
@@ -8,10 +9,10 @@ public class ExtentReportManager {
 
     public synchronized static ExtentReports getExtentReports() {
         ExtentSparkReporter reporter = new ExtentSparkReporter("report/ExtentReport/ExtentReport.html");   //đường dẫn folder report
-        reporter.config().setReportName("Extent Report | Anh ");
+        reporter.config().setReportName("Extent Report | Ninh  Report ");
         extentReports.attachReporter(reporter);
-        extentReports.setSystemInfo("Framework Name", "Selenium Java | Anh ");
-        extentReports.setSystemInfo("Author", "Anh ");
+        extentReports.setSystemInfo("Framework Name", "Selenium Java | Ninh  Report ");
+        extentReports.setSystemInfo("Author", "Ninh  Report ");
         return extentReports;
     }
 
