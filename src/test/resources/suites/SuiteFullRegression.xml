@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FullRegressionTestSuite" verbose="1">
+    
+    <!-- Global test configuration -->
+    <parameter name="BROWSER" value="chrome"/>
+    
+    <!-- Listeners for reporting and logging -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <!-- Login Tests -->
+    <test name="LoginTests" parallel="false">
+        <classes>
+            <class name="POS.tests.LoginTest"/>
+        </classes>
+    </test>
+    
+    <!-- Sales Module Tests -->
+    <test name="SalesTests" parallel="false">
+        <classes>
+            <class name="POS.tests.sales.ProductTest"/>
+            <class name="POS.tests.sales.CustomerTest"/>
+        </classes>
+    </test>
+
+</suite>

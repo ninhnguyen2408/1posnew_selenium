@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="LoginTestSuite" verbose="1">
+    
+    <!-- Global test configuration -->
+    <parameter name="BROWSER" value="chrome"/>
+    
+    <!-- Listeners for reporting and logging -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="LoginTests" parallel="false">
+        <classes>
+            <class name="POS.tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>

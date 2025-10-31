@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeTestSuite" verbose="1">
+    
+    <!-- Global test configuration -->
+    <parameter name="BROWSER" value="chrome"/>
+    
+    <!-- Listeners for reporting and logging -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="SmokeTests" parallel="false">
+        <!-- Run specific test methods for smoke testing -->
+        <classes>
+            <class name="POS.tests.LoginTest">
+                <methods>
+                    <include name="testLoginSuccess"/>
+                    <include name="testLoginAndSelectManagementSystem"/>
+                </methods>
+            </class>
+            <class name="POS.tests.sales.ProductTest">
+                <methods>
+                    <include name="testNavigateToProductPage"/>
+                </methods>
+            </class>
+            <class name="POS.tests.sales.CustomerTest">
+                <methods>
+                    <include name="testNavigateToCustomerPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

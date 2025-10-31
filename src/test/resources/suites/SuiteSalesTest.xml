@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SalesModuleTestSuite" verbose="1">
+    
+    <!-- Global test configuration -->
+    <parameter name="BROWSER" value="chrome"/>
+    
+    <!-- Listeners for reporting and logging -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="ProductTests" parallel="false">
+        <classes>
+            <class name="POS.tests.sales.ProductTest"/>
+        </classes>
+    </test>
+    
+    <test name="CustomerTests" parallel="false">
+        <classes>
+            <class name="POS.tests.sales.CustomerTest"/>
+        </classes>
+    </test>
+
+</suite>
