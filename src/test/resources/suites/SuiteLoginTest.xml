@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="LoginTestSuite" verbose="1">
+<suite name="LoginTestSuite" verbose="1" parallel="methods" thread-count="3">
     
     <!-- Global test configuration -->
     <parameter name="BROWSER" value="chrome"/>
@@ -10,7 +10,7 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-    <test name="LoginTests" parallel="false">
+    <test name="LoginTests" parallel="methods" thread-count="3">
         <classes>
             <class name="POS.tests.LoginTest"/>
         </classes>

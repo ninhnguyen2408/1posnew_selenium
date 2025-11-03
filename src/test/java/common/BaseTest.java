@@ -1,7 +1,8 @@
 package common;
 
 import drivers.DriverManager;
-//import listeners.TestListener;
+import reports.AllureEnvironment;
+import reports.AllureManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,21 +10,30 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utils.LogUtils;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 
 import java.lang.reflect.Method;
 
-//@Listeners(TestListener.class)
+@Epic("POS System Testing")
+@Feature("Base Test Setup")
 public class BaseTest {
+
+    @BeforeSuite
+    public void setUpSuite() {
+        AllureEnvironment.setAllureEnvironment();
+        AllureManager.saveTextLog("Test Suite Started");
+    }
 
     @BeforeMethod
     @Parameters({"BROWSER"})
     public void createDriver(@Optional("chrome") String browserName, Method method) {
         LogUtils.info("=== INITIALIZING BROWSER: " + browserName.toUpperCase() + " for test: " + method.getName() + " ===");
         WebDriver driver = setupBrowser(browserName);   //khởi tạo loại browser và gán vào driver
-//        WebDriver driver = setupBrowser(PropertiesHelper.getValue("browser"));
 
         DriverManager.setDriver(driver);    // mang giá trị driver đã khởi tạo vào trong ThreadLocal
         LogUtils.info("Browser initialized successfully: " + browserName);
+        AllureManager.saveTextLog("Browser initialized: " + browserName + " for test: " + method.getName());
     }
 
     //Viết hàm trung gian để lựa chọn Browser cần chạy với giá trị tham số "browser" bên trên truyền vào
@@ -84,9 +94,13 @@ public class BaseTest {
             LogUtils.warn("=== TEST SKIPPED: " + testName + " ===");
         }
 
-        //Screenshot and Record video in TestListener
-        LogUtils.info("Closing browser driver for test: " + testName);
+        AllureManager.saveTextLog("Closing browser for test: " + testName);
         DriverManager.quit();
         LogUtils.info("Browser driver closed successfully");
+    }
+    
+    @AfterSuite
+    public void tearDownSuite() {
+        AllureManager.saveTextLog("Test Suite Completed");
     }
 }

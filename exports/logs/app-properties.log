@@ -841,3 +841,445 @@ Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của
 [INFO] 31-10-2025 20:18:34 [main] LogUtils - Closing browser driver for test: testVerifySystemSelectionPopup
 [INFO] 31-10-2025 20:18:34 [main] LogUtils - Browser driver closed successfully
 [INFO] 31-10-2025 20:18:34 [main] LogUtils - End testing LoginTests
+[INFO] 03-11-2025 03:07:17 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 03:07:24 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:07:24 [main] LogUtils - === STARTING TEST: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 03:07:24 [main] LogUtils - Running test case testLoginAndSelectSalesSystem
+[INFO] 03-11-2025 03:07:24 [main] LogUtils - Executing testLoginAndSelectSalesSystem - Testing login and select sales system
+[INFO] 03-11-2025 03:07:24 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:07:25 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:07:25 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:07:25 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:07:25 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:07:26 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:07:26 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:07:26 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - Click on element By.xpath: //div[normalize-space(text())='Hệ thống bán hàng']
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - Assert equals https://hdseafood.1erp.vn/choose-store and https://hdseafood.1erp.vn/choose-store
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - testLoginAndSelectSalesSystem completed successfully
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - Test case testLoginAndSelectSalesSystem is passed.
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - === TEST PASSED: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:07:27 [main] LogUtils - End testing TestNGTest-c485dfbf-5e63-48bc-9ec7-7dd20c61db95
+[INFO] 03-11-2025 03:11:32 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginAndSelectManagementSystem ===
+[INFO] 03-11-2025 03:11:36 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:11:36 [main] LogUtils - === STARTING TEST: testLoginAndSelectManagementSystem ===
+[INFO] 03-11-2025 03:11:37 [main] LogUtils - Running test case testLoginAndSelectManagementSystem
+[INFO] 03-11-2025 03:11:37 [main] LogUtils - Executing testLoginAndSelectManagementSystem - Testing login and select management system
+[INFO] 03-11-2025 03:11:37 [main] LogUtils - Attempting to login and select Management System
+[INFO] 03-11-2025 03:11:37 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:11:38 [main] LogUtils - Selecting Management System from popup
+[INFO] 03-11-2025 03:11:39 [main] LogUtils - Click on element By.xpath: //div[normalize-space(text())='Hệ thống quản trị']
+[INFO] 03-11-2025 03:11:42 [main] LogUtils - Assert equals https://hdseafood.1erp.vn/dashboard and https://hdseafood.1erp.vn/dashboard
+[INFO] 03-11-2025 03:11:42 [main] LogUtils - Get text of element By.xpath: (//div[h2[normalize-space(text())='Báo cáo theo dõi doanh thu']])[1]//h2 is Báo cáo theo dõi doanh thu
+[INFO] 03-11-2025 03:11:43 [main] LogUtils - Assert equals Báo cáo theo dõi doanh thu and Báo cáo theo dõi doanh thu
+[INFO] 03-11-2025 03:11:43 [main] LogUtils - testLoginAndSelectManagementSystem completed successfully
+[INFO] 03-11-2025 03:11:43 [main] LogUtils - Test case testLoginAndSelectManagementSystem is passed.
+[INFO] 03-11-2025 03:11:43 [main] LogUtils - === TEST PASSED: testLoginAndSelectManagementSystem ===
+[INFO] 03-11-2025 03:11:43 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:11:43 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 03:11:45 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:11:45 [main] LogUtils - === STARTING TEST: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 03:11:45 [main] LogUtils - Running test case testLoginAndSelectSalesSystem
+[INFO] 03-11-2025 03:11:45 [main] LogUtils - Executing testLoginAndSelectSalesSystem - Testing login and select sales system
+[INFO] 03-11-2025 03:11:45 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:47 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:48 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:11:48 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:11:48 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:11:48 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:11:48 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:11:48 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - Click on element By.xpath: //div[normalize-space(text())='Hệ thống bán hàng']
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - Assert equals https://hdseafood.1erp.vn/choose-store and https://hdseafood.1erp.vn/choose-store
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - testLoginAndSelectSalesSystem completed successfully
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - Test case testLoginAndSelectSalesSystem is passed.
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - === TEST PASSED: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:11:49 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginSuccess ===
+[INFO] 03-11-2025 03:11:51 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:11:51 [main] LogUtils - === STARTING TEST: testLoginSuccess ===
+[INFO] 03-11-2025 03:11:51 [main] LogUtils - Running test case testLoginSuccess
+[INFO] 03-11-2025 03:11:51 [main] LogUtils - Executing testLoginSuccess - Testing successful login
+[INFO] 03-11-2025 03:11:51 [main] LogUtils - Attempting to login with default credentials
+[INFO] 03-11-2025 03:11:51 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:53 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:53 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:11:53 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:11:53 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:11:53 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:11:53 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - Login with default credentials completed successfully
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - testLoginSuccess completed successfully
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - Test case testLoginSuccess is passed.
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - === TEST PASSED: testLoginSuccess ===
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:11:54 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithBothEmptyFields ===
+[INFO] 03-11-2025 03:11:55 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:11:55 [main] LogUtils - === STARTING TEST: testLoginWithBothEmptyFields ===
+[INFO] 03-11-2025 03:11:55 [main] LogUtils - Running test case testLoginWithBothEmptyFields
+[INFO] 03-11-2025 03:11:55 [main] LogUtils - Executing testLoginWithBothEmptyFields - Testing login with both empty fields
+[INFO] 03-11-2025 03:11:55 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:59 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:11:59 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:11:59 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:11:59 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:11:59 [main] LogUtils - Set text  on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:00 [main] LogUtils - Set text  on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:00 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:00 [main] LogUtils - check HTML5 Required Field exists By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:02 [main] LogUtils - testLoginWithBothEmptyFields completed successfully
+[INFO] 03-11-2025 03:12:02 [main] LogUtils - Test case testLoginWithBothEmptyFields is passed.
+[INFO] 03-11-2025 03:12:02 [main] LogUtils - === TEST PASSED: testLoginWithBothEmptyFields ===
+[INFO] 03-11-2025 03:12:02 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:02 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithBothInvalidCredentials ===
+[INFO] 03-11-2025 03:12:03 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:12:03 [main] LogUtils - === STARTING TEST: testLoginWithBothInvalidCredentials ===
+[INFO] 03-11-2025 03:12:03 [main] LogUtils - Running test case testLoginWithBothInvalidCredentials
+[INFO] 03-11-2025 03:12:03 [main] LogUtils - Executing testLoginWithBothInvalidCredentials - Testing login with both invalid credentials
+[INFO] 03-11-2025 03:12:03 [main] LogUtils - Attempting to login with email: invalid@email.com
+[INFO] 03-11-2025 03:12:03 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:04 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:04 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:12:04 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:12:04 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:12:04 [main] LogUtils - Set text invalid@email.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:05 [main] LogUtils - Set text wrongpassword on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:05 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:05 [main] LogUtils - Login completed successfully
+[INFO] 03-11-2025 03:12:06 [main] LogUtils - Get text of element By.xpath: //div[@role='alert'] is Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 03:12:06 [main] LogUtils - Assert equals Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần and Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 03:12:08 [main] LogUtils - testLoginWithBothInvalidCredentials completed successfully
+[INFO] 03-11-2025 03:12:08 [main] LogUtils - Test case testLoginWithBothInvalidCredentials is passed.
+[INFO] 03-11-2025 03:12:08 [main] LogUtils - === TEST PASSED: testLoginWithBothInvalidCredentials ===
+[INFO] 03-11-2025 03:12:08 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:08 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithEmptyEmail ===
+[INFO] 03-11-2025 03:12:09 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:12:09 [main] LogUtils - === STARTING TEST: testLoginWithEmptyEmail ===
+[INFO] 03-11-2025 03:12:09 [main] LogUtils - Running test case testLoginWithEmptyEmail
+[INFO] 03-11-2025 03:12:09 [main] LogUtils - Executing testLoginWithEmptyEmail - Testing login with empty email field
+[INFO] 03-11-2025 03:12:09 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:10 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - Set text  on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:11 [main] LogUtils - check HTML5 Required Field exists By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:13 [main] LogUtils - testLoginWithEmptyEmail completed successfully
+[INFO] 03-11-2025 03:12:13 [main] LogUtils - Test case testLoginWithEmptyEmail is passed.
+[INFO] 03-11-2025 03:12:13 [main] LogUtils - === TEST PASSED: testLoginWithEmptyEmail ===
+[INFO] 03-11-2025 03:12:13 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:13 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithEmptyPassword ===
+[INFO] 03-11-2025 03:12:14 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:12:14 [main] LogUtils - === STARTING TEST: testLoginWithEmptyPassword ===
+[INFO] 03-11-2025 03:12:14 [main] LogUtils - Running test case testLoginWithEmptyPassword
+[INFO] 03-11-2025 03:12:14 [main] LogUtils - Executing testLoginWithEmptyPassword - Testing login with empty password field
+[INFO] 03-11-2025 03:12:14 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Set text  on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:16 [main] LogUtils - check HTML5 Required Field exists By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:18 [main] LogUtils - testLoginWithEmptyPassword completed successfully
+[INFO] 03-11-2025 03:12:18 [main] LogUtils - Test case testLoginWithEmptyPassword is passed.
+[INFO] 03-11-2025 03:12:18 [main] LogUtils - === TEST PASSED: testLoginWithEmptyPassword ===
+[INFO] 03-11-2025 03:12:19 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:19 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithInvalidEmail ===
+[INFO] 03-11-2025 03:12:20 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:12:20 [main] LogUtils - === STARTING TEST: testLoginWithInvalidEmail ===
+[INFO] 03-11-2025 03:12:20 [main] LogUtils - Running test case testLoginWithInvalidEmail
+[INFO] 03-11-2025 03:12:20 [main] LogUtils - Executing testLoginWithInvalidEmail - Testing login with invalid email
+[INFO] 03-11-2025 03:12:20 [main] LogUtils - Attempting to login with email: admin@example111.com
+[INFO] 03-11-2025 03:12:20 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:21 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Set text admin@example111.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:22 [main] LogUtils - Login completed successfully
+[INFO] 03-11-2025 03:12:23 [main] LogUtils - Get text of element By.xpath: //div[@role='alert'] is Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 03:12:23 [main] LogUtils - Assert equals Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần and Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 03:12:25 [main] LogUtils - testLoginWithInvalidEmail completed successfully
+[INFO] 03-11-2025 03:12:25 [main] LogUtils - Test case testLoginWithInvalidEmail is passed.
+[INFO] 03-11-2025 03:12:25 [main] LogUtils - === TEST PASSED: testLoginWithInvalidEmail ===
+[INFO] 03-11-2025 03:12:25 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:25 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithInvalidPassword ===
+[INFO] 03-11-2025 03:12:26 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:12:26 [main] LogUtils - === STARTING TEST: testLoginWithInvalidPassword ===
+[INFO] 03-11-2025 03:12:26 [main] LogUtils - Running test case testLoginWithInvalidPassword
+[INFO] 03-11-2025 03:12:26 [main] LogUtils - Executing testLoginWithInvalidPassword - Testing login with invalid password
+[INFO] 03-11-2025 03:12:26 [main] LogUtils - Attempting to login with email: ninh@gmail.com
+[INFO] 03-11-2025 03:12:26 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Set text 568690 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:28 [main] LogUtils - Login completed successfully
+[INFO] 03-11-2025 03:12:29 [main] LogUtils - Get text of element By.xpath: //div[@role='alert'] is Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 03:12:29 [main] LogUtils - Assert equals Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần and Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 03:12:31 [main] LogUtils - testLoginWithInvalidPassword completed successfully
+[INFO] 03-11-2025 03:12:31 [main] LogUtils - Test case testLoginWithInvalidPassword is passed.
+[INFO] 03-11-2025 03:12:31 [main] LogUtils - === TEST PASSED: testLoginWithInvalidPassword ===
+[INFO] 03-11-2025 03:12:31 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:31 [main] LogUtils - === INITIALIZING BROWSER: CHROME for test: testVerifySystemSelectionPopup ===
+[INFO] 03-11-2025 03:12:33 [main] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 03:12:33 [main] LogUtils - === STARTING TEST: testVerifySystemSelectionPopup ===
+[INFO] 03-11-2025 03:12:33 [main] LogUtils - Running test case testVerifySystemSelectionPopup
+[INFO] 03-11-2025 03:12:33 [main] LogUtils - Executing testVerifySystemSelectionPopup - Testing system selection popup display
+[INFO] 03-11-2025 03:12:33 [main] LogUtils - Attempting to login with default credentials
+[INFO] 03-11-2025 03:12:33 [main] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:34 [main] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 03:12:34 [main] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 03:12:34 [main] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 03:12:34 [main] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 03:12:35 [main] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 03:12:35 [main] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 03:12:35 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 03:12:35 [main] LogUtils - Login with default credentials completed successfully
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - Get text of element By.xpath: //div[normalize-space(text())='Hệ thống quản trị'] is Hệ thống quản trị
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - Assert equals Hệ thống quản trị and Hệ thống quản trị
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - Get text of element By.xpath: //div[normalize-space(text())='Hệ thống bán hàng'] is Hệ thống bán hàng
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - Assert equals Hệ thống bán hàng and Hệ thống bán hàng
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - testVerifySystemSelectionPopup completed successfully
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - Test case testVerifySystemSelectionPopup is passed.
+[INFO] 03-11-2025 03:12:36 [main] LogUtils - === TEST PASSED: testVerifySystemSelectionPopup ===
+[INFO] 03-11-2025 03:12:38 [main] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 03:12:38 [main] LogUtils - End testing LoginTests
+[INFO] 03-11-2025 04:20:13 [TestNG-test-LoginTests-2] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 04:20:13 [TestNG-test-LoginTests-1] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginAndSelectManagementSystem ===
+[INFO] 03-11-2025 04:20:13 [TestNG-test-LoginTests-3] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginSuccess ===
+[INFO] 03-11-2025 04:20:20 [TestNG-test-LoginTests-1] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:20 [TestNG-test-LoginTests-2] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:20 [TestNG-test-LoginTests-3] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-3] LogUtils - === STARTING TEST: testLoginSuccess ===
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-2] LogUtils - === STARTING TEST: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-1] LogUtils - === STARTING TEST: testLoginAndSelectManagementSystem ===
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-2] LogUtils - Running test case testLoginAndSelectSalesSystem
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-1] LogUtils - Running test case testLoginAndSelectManagementSystem
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-3] LogUtils - Running test case testLoginSuccess
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-3] LogUtils - Executing testLoginSuccess - Testing successful login
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-1] LogUtils - Executing testLoginAndSelectManagementSystem - Testing login and select management system
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-2] LogUtils - Executing testLoginAndSelectSalesSystem - Testing login and select sales system
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-3] LogUtils - Attempting to login with default credentials
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-1] LogUtils - Attempting to login and select Management System
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-3] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-1] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:21 [TestNG-test-LoginTests-2] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:23 [TestNG-test-LoginTests-3] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:23 [TestNG-test-LoginTests-2] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:23 [TestNG-test-LoginTests-1] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-1] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-3] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-2] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-1] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-1] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-2] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-3] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-3] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-2] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-2] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-3] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-1] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-2] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-3] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:24 [TestNG-test-LoginTests-1] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-1] LogUtils - Selecting Management System from popup
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - Login with default credentials completed successfully
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - testLoginSuccess completed successfully
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - Test case testLoginSuccess is passed.
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - === TEST PASSED: testLoginSuccess ===
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:25 [TestNG-test-LoginTests-3] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithBothEmptyFields ===
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - Click on element By.xpath: //div[normalize-space(text())='Hệ thống bán hàng']
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-1] LogUtils - Click on element By.xpath: //div[normalize-space(text())='Hệ thống quản trị']
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - Assert equals https://hdseafood.1erp.vn/choose-store and https://hdseafood.1erp.vn/choose-store
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - testLoginAndSelectSalesSystem completed successfully
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - Test case testLoginAndSelectSalesSystem is passed.
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - === TEST PASSED: testLoginAndSelectSalesSystem ===
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:26 [TestNG-test-LoginTests-2] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithBothInvalidCredentials ===
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-3] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-3] LogUtils - === STARTING TEST: testLoginWithBothEmptyFields ===
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-2] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-3] LogUtils - Running test case testLoginWithBothEmptyFields
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-2] LogUtils - === STARTING TEST: testLoginWithBothInvalidCredentials ===
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-3] LogUtils - Executing testLoginWithBothEmptyFields - Testing login with both empty fields
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-3] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-2] LogUtils - Running test case testLoginWithBothInvalidCredentials
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-2] LogUtils - Executing testLoginWithBothInvalidCredentials - Testing login with both invalid credentials
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-2] LogUtils - Attempting to login with email: invalid@email.com
+[INFO] 03-11-2025 04:20:28 [TestNG-test-LoginTests-2] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:29 [TestNG-test-LoginTests-1] LogUtils - Assert equals https://hdseafood.1erp.vn/dashboard and https://hdseafood.1erp.vn/dashboard
+[INFO] 03-11-2025 04:20:29 [TestNG-test-LoginTests-1] LogUtils - Get text of element By.xpath: (//div[h2[normalize-space(text())='Báo cáo theo dõi doanh thu']])[1]//h2 is Báo cáo theo dõi doanh thu
+[INFO] 03-11-2025 04:20:29 [TestNG-test-LoginTests-1] LogUtils - Assert equals Báo cáo theo dõi doanh thu and Báo cáo theo dõi doanh thu
+[INFO] 03-11-2025 04:20:29 [TestNG-test-LoginTests-1] LogUtils - testLoginAndSelectManagementSystem completed successfully
+[INFO] 03-11-2025 04:20:29 [TestNG-test-LoginTests-1] LogUtils - Test case testLoginAndSelectManagementSystem is passed.
+[INFO] 03-11-2025 04:20:29 [TestNG-test-LoginTests-1] LogUtils - === TEST PASSED: testLoginAndSelectManagementSystem ===
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-1] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-1] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithEmptyEmail ===
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-3] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-2] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-3] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-3] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:30 [TestNG-test-LoginTests-3] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-3] LogUtils - Set text  on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Set text invalid@email.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-3] LogUtils - Set text  on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-1] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-1] LogUtils - === STARTING TEST: testLoginWithEmptyEmail ===
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-1] LogUtils - Running test case testLoginWithEmptyEmail
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-1] LogUtils - Executing testLoginWithEmptyEmail - Testing login with empty email field
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-1] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Set text wrongpassword on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-3] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-3] LogUtils - check HTML5 Required Field exists By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:31 [TestNG-test-LoginTests-2] LogUtils - Login completed successfully
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-1] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-2] LogUtils - Get text of element By.xpath: //div[@role='alert'] is Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-2] LogUtils - Assert equals Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần and Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-1] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-1] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-1] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:32 [TestNG-test-LoginTests-1] LogUtils - Set text  on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:33 [TestNG-test-LoginTests-1] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:33 [TestNG-test-LoginTests-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:33 [TestNG-test-LoginTests-1] LogUtils - check HTML5 Required Field exists By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:33 [TestNG-test-LoginTests-3] LogUtils - testLoginWithBothEmptyFields completed successfully
+[INFO] 03-11-2025 04:20:33 [TestNG-test-LoginTests-3] LogUtils - Test case testLoginWithBothEmptyFields is passed.
+[INFO] 03-11-2025 04:20:33 [TestNG-test-LoginTests-3] LogUtils - === TEST PASSED: testLoginWithBothEmptyFields ===
+[INFO] 03-11-2025 04:20:34 [TestNG-test-LoginTests-3] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:34 [TestNG-test-LoginTests-3] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithEmptyPassword ===
+[INFO] 03-11-2025 04:20:34 [TestNG-test-LoginTests-2] LogUtils - testLoginWithBothInvalidCredentials completed successfully
+[INFO] 03-11-2025 04:20:34 [TestNG-test-LoginTests-2] LogUtils - Test case testLoginWithBothInvalidCredentials is passed.
+[INFO] 03-11-2025 04:20:34 [TestNG-test-LoginTests-2] LogUtils - === TEST PASSED: testLoginWithBothInvalidCredentials ===
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-2] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-2] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithInvalidEmail ===
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-1] LogUtils - testLoginWithEmptyEmail completed successfully
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-1] LogUtils - Test case testLoginWithEmptyEmail is passed.
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-1] LogUtils - === TEST PASSED: testLoginWithEmptyEmail ===
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-3] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-3] LogUtils - === STARTING TEST: testLoginWithEmptyPassword ===
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-3] LogUtils - Running test case testLoginWithEmptyPassword
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-3] LogUtils - Executing testLoginWithEmptyPassword - Testing login with empty password field
+[INFO] 03-11-2025 04:20:35 [TestNG-test-LoginTests-3] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-1] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-1] LogUtils - === INITIALIZING BROWSER: CHROME for test: testLoginWithInvalidPassword ===
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-2] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-2] LogUtils - === STARTING TEST: testLoginWithInvalidEmail ===
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-2] LogUtils - Running test case testLoginWithInvalidEmail
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-2] LogUtils - Executing testLoginWithInvalidEmail - Testing login with invalid email
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-2] LogUtils - Attempting to login with email: admin@example111.com
+[INFO] 03-11-2025 04:20:36 [TestNG-test-LoginTests-2] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-3] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-3] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-3] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-3] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-3] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-1] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-1] LogUtils - === STARTING TEST: testLoginWithInvalidPassword ===
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-1] LogUtils - Running test case testLoginWithInvalidPassword
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-1] LogUtils - Executing testLoginWithInvalidPassword - Testing login with invalid password
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-1] LogUtils - Attempting to login with email: ninh@gmail.com
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-1] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:37 [TestNG-test-LoginTests-3] LogUtils - Set text  on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-3] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-3] LogUtils - check HTML5 Required Field exists By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-2] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-2] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-2] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-2] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-2] LogUtils - Set text admin@example111.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-2] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:38 [TestNG-test-LoginTests-1] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-2] LogUtils - Login completed successfully
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Set text 568690 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-1] LogUtils - Login completed successfully
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-2] LogUtils - Get text of element By.xpath: //div[@role='alert'] is Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 04:20:39 [TestNG-test-LoginTests-2] LogUtils - Assert equals Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần and Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-3] LogUtils - testLoginWithEmptyPassword completed successfully
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-3] LogUtils - Test case testLoginWithEmptyPassword is passed.
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-3] LogUtils - === TEST PASSED: testLoginWithEmptyPassword ===
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-1] LogUtils - Get text of element By.xpath: //div[@role='alert'] is Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-1] LogUtils - Assert equals Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần and Đăng nhập thất bại
+Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-3] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:40 [TestNG-test-LoginTests-3] LogUtils - === INITIALIZING BROWSER: CHROME for test: testVerifySystemSelectionPopup ===
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-3] LogUtils - Browser initialized successfully: chrome
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-3] LogUtils - === STARTING TEST: testVerifySystemSelectionPopup ===
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-3] LogUtils - Running test case testVerifySystemSelectionPopup
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-3] LogUtils - Executing testVerifySystemSelectionPopup - Testing system selection popup display
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-3] LogUtils - Attempting to login with default credentials
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-3] LogUtils - Opening browser and navigating to URL: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-2] LogUtils - testLoginWithInvalidEmail completed successfully
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-2] LogUtils - Test case testLoginWithInvalidEmail is passed.
+[INFO] 03-11-2025 04:20:41 [TestNG-test-LoginTests-2] LogUtils - === TEST PASSED: testLoginWithInvalidEmail ===
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-2] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-1] LogUtils - testLoginWithInvalidPassword completed successfully
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-1] LogUtils - Test case testLoginWithInvalidPassword is passed.
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-1] LogUtils - === TEST PASSED: testLoginWithInvalidPassword ===
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-3] LogUtils - Navigate to: https://hdseafood.1erp.vn/login
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-1] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-3] LogUtils - Get text of element By.xpath: //button[normalize-space()='Đăng nhập'] is Đăng nhập
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-3] LogUtils - Assert equals Đăng nhập and Đăng nhập
+[INFO] 03-11-2025 04:20:42 [TestNG-test-LoginTests-3] LogUtils - Successfully loaded login page
+[INFO] 03-11-2025 04:20:43 [TestNG-test-LoginTests-3] LogUtils - Set text ninh@gmail.com on input By.xpath: //input[@name='email']
+[INFO] 03-11-2025 04:20:43 [TestNG-test-LoginTests-3] LogUtils - Set text MatKhau@123 on input By.xpath: //input[@name='password']
+[INFO] 03-11-2025 04:20:43 [TestNG-test-LoginTests-3] LogUtils - Click on element By.xpath: //button[normalize-space()='Đăng nhập']
+[INFO] 03-11-2025 04:20:43 [TestNG-test-LoginTests-3] LogUtils - Login with default credentials completed successfully
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - Get text of element By.xpath: //div[normalize-space(text())='Hệ thống quản trị'] is Hệ thống quản trị
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - Assert equals Hệ thống quản trị and Hệ thống quản trị
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - Get text of element By.xpath: //div[normalize-space(text())='Hệ thống bán hàng'] is Hệ thống bán hàng
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - Assert equals Hệ thống bán hàng and Hệ thống bán hàng
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - testVerifySystemSelectionPopup completed successfully
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - Test case testVerifySystemSelectionPopup is passed.
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - === TEST PASSED: testVerifySystemSelectionPopup ===
+[INFO] 03-11-2025 04:20:44 [TestNG-test-LoginTests-3] LogUtils - Browser driver closed successfully
+[INFO] 03-11-2025 04:20:44 [main] LogUtils - End testing LoginTests

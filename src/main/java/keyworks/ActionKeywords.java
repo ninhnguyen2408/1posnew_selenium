@@ -2,6 +2,7 @@ package keyworks;
 
 import com.aventstack.extentreports.Status;
 import drivers.DriverManager;
+import reports.AllureManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import reports.ExtentTestManager;
 import utils.LogUtils;
+import io.qameta.allure.Step;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -29,10 +31,12 @@ public class ActionKeywords {
     }
 
     // Open URL
+    @Step("Opening URL: {URL}")
     public static void openURL(String URL) {
         DriverManager.getDriver().get(URL);
         logConsole("Navigate to: " + URL);
         ExtentTestManager.logMessage(Status.INFO, "Open URL: " + URL);
+        AllureManager.stepOpenUrl(URL);
     }
 
     // Get WebElement
@@ -108,11 +112,13 @@ public class ActionKeywords {
     }
 
     // Click element
+    @Step("Clicking element: {by}")
     public static void clickElement(By by) {
         waitForElementClickable(by);
         getWebElement(by).click();
         logConsole("Click on element " + by);
         ExtentTestManager.logMessage(Status.INFO, "Click on element " + by);
+        AllureManager.stepClickElement(by.toString());
     }
 
     // Click element  với seconds là giá trị thay đổi import org.testng.Assert;
@@ -134,11 +140,13 @@ public class ActionKeywords {
     }
 
     // sendKeys
+    @Step("Entering text '{text}' in field: {by}")
     public static void sendKeys(By by, String text) {
         waitForElementVisible(by);
         getWebElement(by).sendKeys(text);
         logConsole("Set text " + text + " on input " + by);
         ExtentTestManager.logMessage(Status.INFO, "Set text " + text + " on input " + by);
+        AllureManager.stepEnterText(by.toString(), text);
     }
 
     // sendKeys với seconds là giá trị thay đổi
@@ -176,10 +184,17 @@ public class ActionKeywords {
     }
 
     // Assert Equals
+    @Step("Asserting equals: Expected='{expected}', Actual='{actual}'")
     public static void assertEquals(Object actual, Object expected, String message) {
         waitForPageLoaded();
         logConsole("Assert equals " + actual + " and " + expected);
-        Assert.assertEquals(actual, expected, message);
+        try {
+            Assert.assertEquals(actual, expected, message);
+            AllureManager.stepVerify("Assertion PASSED: " + message);
+        } catch (AssertionError e) {
+            AllureManager.stepTestFailed(message + ". Expected: '" + expected + "', Actual: '" + actual + "'");
+            throw e;
+        }
     }
 
     // Verify Contains

@@ -106,6 +106,12 @@
             <version>1.18.42</version>
         </dependency>
 
+        <!-- Jackson for JSON processing in Allure -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -116,7 +122,6 @@
     </properties>
 
     <build>
-	<pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -125,7 +130,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!-- Call Suite name -->
-						<suiteXmlFile>suites/SuiteLoginTest.xml</suiteXmlFile>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 					<argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar"
@@ -137,8 +142,18 @@
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
+			
+			<!-- Allure Maven Plugin -->
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>2.13.0</version>
+				<configuration>
+					<resultsDirectory>target/allure-results</resultsDirectory>
+					<reportDirectory>target/allure-report</reportDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
-	</pluginManagement>
     </build>
 
 </project>
