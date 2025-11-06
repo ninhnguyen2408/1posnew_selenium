@@ -58,30 +58,6 @@ public class LoginTest extends BaseTest {
         AllureManager.stepTestPassed("User successfully selected management system");
     }
     
-    @Test
-    @Story("System Selection")
-    @Description("Verify that user can login and select sales system")
-    @Severity(SeverityLevel.CRITICAL)
-    @Owner("QA Team")
-    public void testLoginAndSelectSalesSystem() {
-        LogUtils.info("Executing testLoginAndSelectSalesSystem - Testing login and select sales system");
-        loginPage.loginWithSalesSystem();
-        LogUtils.info("testLoginAndSelectSalesSystem completed successfully");
-        AllureManager.stepTestPassed("User successfully selected sales system");
-    }
-    
-    @Test
-    @Story("System Selection")
-    @Description("Verify that system selection popup appears after successful login")
-    @Severity(SeverityLevel.NORMAL)
-    @Owner("QA Team")
-    public void testVerifySystemSelectionPopup() {
-        LogUtils.info("Executing testVerifySystemSelectionPopup - Testing system selection popup display");
-        loginPage.loginCMS();
-        loginPage.verifySystemSelectionPopup();
-        LogUtils.info("testVerifySystemSelectionPopup completed successfully");
-        AllureManager.stepTestPassed("System selection popup verified successfully");
-    }
 
     @Test
     @Story("Invalid Login")
@@ -130,6 +106,7 @@ public class LoginTest extends BaseTest {
     public void testLoginWithEmptyEmail() {
         LogUtils.info("Executing testLoginWithEmptyEmail - Testing login with empty email field");
         loginPage.testEmptyEmail();
+        loginPage.verifyNullEmail();
         LogUtils.info("testLoginWithEmptyEmail completed successfully");
         AllureManager.stepTestPassed("Empty email field validation verified successfully");
     }

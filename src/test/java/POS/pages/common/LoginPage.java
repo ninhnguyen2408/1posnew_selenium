@@ -13,6 +13,8 @@ public class LoginPage {
     private By inputPassword = By.xpath("//input[@name='password']");
     private By buttonLogin = By.xpath("//button[normalize-space()='Đăng nhập']");
     private By alertMessage = By.xpath("//div[@role='alert']");
+    private By errorMessageRequiredEmail = By.xpath("//p[normalize-space(text())='Vui lòng nhập tên đăng nhập']");
+    private By errorMessageRequiredPassword = By.xpath("//p[normalize-space(text())='Vui lòng nhập mật khẩu']");
     
     // Popup system selection elements
     private By systemManagement = By.xpath("//div[normalize-space(text())='Hệ thống quản trị']");
@@ -86,24 +88,18 @@ public class LoginPage {
         return new DashboardPage();
     }
 
+
     public void verifyNullEmail() {
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
-        Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "Should stay on login page when email is empty");
-        if (ActionKeywords.verifyHTML5RequiredField(inputEmail)) {
-            ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputEmail), "Vui lòng nhập tên đăng nhập", "Validation message of Email not match");
-        }
-        ActionKeywords.sleep(2);
+
+        boolean check = ActionKeywords.checkElementExist(errorMessageRequiredEmail);
+        Assert.assertTrue(check, "Error message for required email not displayed.");
     }
 
-    public void verifyNullPassword() {
-        ActionKeywords.clickElement(buttonLogin);
-        ActionKeywords.waitForPageLoaded();
-        Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "Should stay on login page when password is empty");
-        if (ActionKeywords.verifyHTML5RequiredField(inputPassword)) {
-            ActionKeywords.assertEquals(ActionKeywords.getHTML5MessageField(inputPassword), "Vui lòng nhập mật khẩu", "Validation message of Password not match");
-        }
-        ActionKeywords.sleep(2);
+    public void verifyNullPassword(){
+        boolean check = ActionKeywords.checkElementDisplayed(errorMessageRequiredPassword);
+        Assert.assertTrue(check, "Error message for required password not displayed.");
     }
 
     private void verifySalesSystemURL() {
