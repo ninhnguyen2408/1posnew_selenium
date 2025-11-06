@@ -36,3 +36,47 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Selenium/TestNG Specific ###
+# Test outputs
+test-output/
+reports/
+report/
+exports/logs/
+exports/
+*.log
+
+# Allure tool binaries
+.allure/
+
+# Gradle files
+.gradle/
+
+# Screenshots & Videos
+screenshots/
+videos/
+*.png
+*.mp4
+*.avi
+
+# Browser drivers (if stored locally)
+drivers/
+*.exe
+
+# Allure Results (generated files)
+allure-results/
+allure-report/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Test data with sensitive info
+**/testdata/sensitive/
+**/config/prod/
+
+# IDE specific
+*.swp
+*.swo
+*~
