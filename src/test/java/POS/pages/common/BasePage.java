@@ -6,18 +6,28 @@ import org.openqa.selenium.By;
 public class BasePage {
     
     // Common navigation elements - Main modules
-    protected By salesModule = By.xpath("//span[normalize-space()='Điểm bán hàng']");
-    protected By staffModule = By.xpath("//span[normalize-space()='Nhân viên']");
-    protected By settingsModule = By.xpath("//span[normalize-space()='Thiết lập']");
-    protected By warehouseModule = By.xpath("//span[normalize-space()='Kho vận']");
-    protected By financeModule = By.xpath("//span[normalize-space()='Tài chính']");
+    protected By salesModule = By.xpath("//button[@title='Điểm bán hàng']");
+    protected By staffModule = By.xpath("//button[@title='Nhân viên']");
+    protected By settingsModule = By.xpath("//button[@title='Thiết lập']");
+    protected By warehouseModule = By.xpath("//button[@title='Kho vận']");
+    protected By financeModule = By.xpath("//button[@title='Tài chính']");
     
-    // Sales module sub-menu items
-    protected By salesDashboard = By.xpath("//a[normalize-space()='Dashboard']");
-    protected By salesPoint = By.xpath("//a[normalize-space()='Điểm bán hàng']");
-    protected By product = By.xpath("//a[normalize-space()='Sản phẩm']");
+    // Sales manager module sub-menu items
+    protected By salesManagerDashboard = By.xpath("//a[normalize-space()='Dashboard']");
+    protected By salesManagerPoint = By.xpath("//a[normalize-space()='Điểm bán hàng']");
+    protected By saleManagerProduct = By.xpath("//a[normalize-space()='Sản phẩm']");
+    protected By saleManagerProductCatalog = By.xpath("//a[normalize-space()='Danh mục sản phẩm']");
+    protected By saleManagerProductAttributes = By.xpath("//a[normalize-space()='Thuộc tính sản phẩm']");
+    protected By saleManagerProductPriceList = By.xpath("//a[normalize-space()='Bảng giá']");
+    protected By saleManagerProductPromotion = By.xpath("//a[normalize-space()='Chương trình khuyến mãi']");
+    protected By saleManagerProductVoucher = By.xpath("//a[normalize-space()='Voucher giảm giá']");
     protected By order = By.xpath("//a[normalize-space()='Đơn hàng']");
+    protected By salesSession = By.xpath("//a[normalize-space()='Phiên bán hàng']");
     protected By customer = By.xpath("//a[normalize-space()='Khách hàng']");
+    protected By loyalCustomer = By.xpath("//a[normalize-space()='Khách hàng thân thiết']");
+
+    // Staff module sub-menu items
+    protected By staffManagement = By.xpath("//a[normalize-space()='Nhân viên']");
     
     // Settings module sub-menu items
     protected By generalSettings = By.xpath("//a[normalize-space()='Thiết lập chung']");
@@ -34,6 +44,13 @@ public class BasePage {
     // Finance module sub-menu items
     protected By financeManagement = By.xpath("//a[normalize-space()='Quản lý tài chính']");
     protected By expense = By.xpath("//a[normalize-space()='Chi phí']");
+
+
+    //Sales module
+    protected By selectStore = By.xpath("//a[normalize-space(text())='Chọn cửa hàng']");
+
+
+
     
     // Navigate to main modules
     public void navigateToSalesModule() {
@@ -64,22 +81,22 @@ public class BasePage {
     // Navigate to sales sub-modules
     public void navigateToSalesDashboard() {
         ActionKeywords.mouseHover(salesModule);
-        ActionKeywords.waitForElementVisible(salesDashboard);
-        ActionKeywords.clickElement(salesDashboard);
+        ActionKeywords.waitForElementVisible(salesManagerDashboard);
+        ActionKeywords.clickElement(salesManagerDashboard);
         ActionKeywords.waitForPageLoaded();
     }
     
     public void navigateToSalesPoint() {
         ActionKeywords.mouseHover(salesModule);
-        ActionKeywords.waitForElementVisible(salesPoint);
-        ActionKeywords.clickElement(salesPoint);
+        ActionKeywords.waitForElementVisible(salesManagerPoint);
+        ActionKeywords.clickElement(salesManagerPoint);
         ActionKeywords.waitForPageLoaded();
     }
     
     public void navigateToProduct() {
         ActionKeywords.mouseHover(salesModule);
-        ActionKeywords.waitForElementVisible(product);
-        ActionKeywords.clickElement(product);
+        ActionKeywords.waitForElementVisible(saleManagerProduct);
+        ActionKeywords.clickElement(saleManagerProduct);
         ActionKeywords.waitForPageLoaded();
     }
     
