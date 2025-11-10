@@ -69,20 +69,43 @@ public class ActionKeywords {
     public static boolean checkElementExist(By by) {
         List<WebElement> listElement = getWebElements(by);
         if (listElement.size() > 0) {
-            System.out.println("Element " + by + "exist");
+            logConsole("Element " + by + "exist");
             return true;
         } else {
-            System.out.println("Element " + by + "NOT exist");
+            logConsole("Element " + by + "NOT exist");
             return false;
         }
     }
+
+    // Hàm kiểm tra sự tồn tại của phần tử với lặp lại nhiều lần
+    public static boolean checkElementExist(By by, int maxRetries, int waitTimeMillis) {
+      int retryCount = 0;
+
+      while (retryCount < maxRetries) {
+         try {
+            WebElement element = getWebElement(by);
+            if (element != null) {
+               LogUtils.info("Tìm thấy phần tử ở lần thử thứ " + (retryCount + 1));
+               return true; // Phần tử được tìm thấy
+            }
+         } catch (NoSuchElementException e) {
+            LogUtils.warn("Không tìm thấy phần tử. Thử lại lần " + (retryCount + 1));
+            retryCount++;
+            try {
+               Thread.sleep(waitTimeMillis); // Chờ trước khi thử lại
+            } catch (InterruptedException ie) {
+               ie.printStackTrace();
+            }
+         }
+        }
+      }
 
     // Check element Displayed
     public static boolean checkElementDisplayed(By by) {
         waitForElementVisible(by);
         boolean check = getWebElement(by).isDisplayed();
         return check;
-    }
+    }    
 
     // Check element Enable
     public static boolean checkElementEnable(By by) {
@@ -251,7 +274,7 @@ public class ActionKeywords {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 
-        LogUtils.info("Upload File with Local Form: " + filePath);
+        logConsole("Upload File with Local Form: " + filePath);
 //            if (ExtentTestManager.getTest() != null) {
 //                  logConsole("Upload File with Local Form: " + filePath);
 //            }
@@ -316,7 +339,7 @@ public class ActionKeywords {
     // getText alert
     public static String getTextAlert() {
         sleep(2);
-        LogUtils.info("Get text ion alert: " + DriverManager.getDriver().switchTo().alert().getText());
+        logConsole("Get text ion alert: " + DriverManager.getDriver().switchTo().alert().getText());
         return DriverManager.getDriver().switchTo().alert().getText();
     }
 
@@ -390,7 +413,7 @@ public class ActionKeywords {
         js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(by));
         //Click with JS
         js.executeScript("arguments[0].click();", getWebElement(by));
-        LogUtils.info("Click on element with JS: " + by);
+        logConsole("Click on element with JS: " + by);
     }
 
     // nhấn phím ENTER

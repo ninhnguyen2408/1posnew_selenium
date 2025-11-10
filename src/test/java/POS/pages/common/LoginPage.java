@@ -2,12 +2,15 @@ package POS.pages.common;
 
 import constants.ConfigData;
 import keyworks.ActionKeywords;
+
+import java.awt.Desktop.Action;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import drivers.DriverManager;
 import utils.LogUtils;
 
-public class LoginPage {
+public class LoginPage extends  BasePage{
 
     private By inputEmail = By.xpath("//input[@name='email']");
     private By inputPassword = By.xpath("//input[@name='password']");
@@ -15,17 +18,35 @@ public class LoginPage {
     private By alertMessage = By.xpath("//div[@role='alert']");
     private By errorMessageRequiredEmail = By.xpath("//p[normalize-space(text())='Vui lòng nhập tên đăng nhập']");
     private By errorMessageRequiredPassword = By.xpath("//p[normalize-space(text())='Vui lòng nhập mật khẩu']");
+
+    
+
     
     // Popup system selection elements
+    private By titlePopup = By.xpath("//span[normalize-space(text())='Chọn hệ thống bạn muốn truy cập']");
     private By systemManagement = By.xpath("//div[normalize-space(text())='Hệ thống quản trị']");
     private By systemSales = By.xpath("//div[normalize-space(text())='Hệ thống bán hàng']");
 
     private void getBrowser(){
-        LogUtils.info("Opening browser and navigating to URL: " + ConfigData.URL);
         ActionKeywords.openURL(ConfigData.URL);
         ActionKeywords.waitForPageLoaded();
-        ActionKeywords.assertEquals(ActionKeywords.getTextElement(buttonLogin), "Đăng nhập", "NOT the Login page");
-        LogUtils.info("Successfully loaded login page");
+        ActionKeywords.waitForElementVisible(buttonLogin);
+        LogUtils.info("Opening browser and navigating to URL: " + ConfigData.URL);
+    }
+
+    private void enterEmail(String email) {
+        ActionKeywords.sendKeys(inputEmail, email);
+        LogUtils.info("Entered email: " + (email.isEmpty() ? "[EMPTY]" : email));
+    }
+
+    private void enterPassword(String password) {
+        ActionKeywords.sendKeys(inputPassword, password);
+        LogUtils.info("Entered password: " + (password.isEmpty() ? "[EMPTY]" : "****"));
+    }
+
+    private void clickLoginButton() {
+        ActionKeywords.clickElement(buttonLogin);
+        LogUtils.info("Clicked on Login button");
     }
 
     public DashboardPage loginCMS(String email, String password) {
@@ -40,11 +61,10 @@ public class LoginPage {
     }
 
     public DashboardPage loginCMS() {
-        LogUtils.info("Attempting to login with default credentials");
         getBrowser();
-        ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
-        ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
-        ActionKeywords.clickElement(buttonLogin);
+        enterEmail(ConfigData.Email);
+        enterPassword(ConfigData.Password);
+        clickLoginButton();
         ActionKeywords.waitForPageLoaded();
         LogUtils.info("Login with default credentials completed successfully");
         return new DashboardPage();
@@ -53,9 +73,9 @@ public class LoginPage {
     public DashboardPage loginWithManagementSystem() {
         LogUtils.info("Attempting to login and select Management System");
         getBrowser();
-        ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
-        ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
-        ActionKeywords.clickElement(buttonLogin);
+        enterEmail(ConfigData.Email);
+        enterPassword(ConfigData.Password);
+        clickLoginButton();
         ActionKeywords.waitForPageLoaded();
         
         // Wait for popup and select Management System
@@ -64,16 +84,11 @@ public class LoginPage {
         ActionKeywords.clickElement(systemManagement);
         ActionKeywords.waitForPageLoaded();
         
-        // Wait 3 seconds after selecting management system
-        ActionKeywords.sleep(3);
-        
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.verifyDashboardURL();
-        dashboardPage.verifyDashboardElement();
-        return dashboardPage;
+        return new DashboardPage();
     }
     
-    public DashboardPage loginWithSalesSystem() {
+    public void loginWithSalesSystem() {
+        LogUtils.info("Attempting to login and select sales System");
         getBrowser();
         ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
         ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
@@ -84,20 +99,38 @@ public class LoginPage {
         ActionKeywords.waitForElementVisible(systemSales);
         ActionKeywords.clickElement(systemSales);
         ActionKeywords.waitForPageLoaded();
-        verifySalesSystemURL();
-        return new DashboardPage();
     }
 
+    // kiểm tra lại test case
+
+    public void verifyPopupNavigate(){
+        ActionKeywords.waitForPageLoaded();
+        boolean check = ActionKeywords.checkElementDisplayed(titlePopup);
+        Assert.assertTrue(check, "Popup is not display");
+    }
+
+    public void verifyLoginManager() {
+        boolean check = ActionKeywords.checkElementDisplayed(salesManagerDashboard);
+        Assert.assertTrue(check, "Login manager failed or Dashboard not displayed.");
+    }
+
+    public void verifyLoginSale() {
+        boolean check = ActionKeywords.checkElementDisplayed(selectStore);
+        Assert.assertTrue(check, "Login sales failed or select store not displayed.");
+        
+        ActionKeywords.sleep(2);
+    }
 
     public void verifyNullEmail() {
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
-
         boolean check = ActionKeywords.checkElementExist(errorMessageRequiredEmail);
         Assert.assertTrue(check, "Error message for required email not displayed.");
     }
 
     public void verifyNullPassword(){
+        ActionKeywords.clickElement(buttonLogin);
+        ActionKeywords.waitForPageLoaded();
         boolean check = ActionKeywords.checkElementDisplayed(errorMessageRequiredPassword);
         Assert.assertTrue(check, "Error message for required password not displayed.");
     }

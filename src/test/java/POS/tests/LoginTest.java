@@ -15,6 +15,7 @@ import utils.LogUtils;
 
 import io.qameta.allure.*;
 
+import java.awt.Desktop.Action;
 import java.lang.reflect.Method;
 
 
@@ -34,28 +35,43 @@ public class LoginTest extends BaseTest {
     }
 
 
-    @Test
-    @Story("Valid Login")
-    @Description("Verify that user can login successfully with valid credentials")
+    @Test(priority = 1)
+    @Story("Login")
+    @Description("Verify that user can login successfully with valid data")
     @Severity(SeverityLevel.CRITICAL)
     @Owner("QA Team")
     public void testLoginSuccess() {
         LogUtils.info("Executing testLoginSuccess - Testing successful login");
         loginPage.loginCMS();
+        loginPage.verifyPopupNavigate();
         LogUtils.info("testLoginSuccess completed successfully");
         AllureManager.stepTestPassed("User logged in successfully");
     }
     
-    @Test
-    @Story("System Selection")
+    @Test(priority = 2)
+    @Story("Login")
     @Description("Verify that user can login and select management system")
     @Severity(SeverityLevel.CRITICAL)
     @Owner("QA Team")
     public void testLoginAndSelectManagementSystem() {
         LogUtils.info("Executing testLoginAndSelectManagementSystem - Testing login and select management system");
         loginPage.loginWithManagementSystem();
+        loginPage.verifyLoginManager();
         LogUtils.info("testLoginAndSelectManagementSystem completed successfully");
         AllureManager.stepTestPassed("User successfully selected management system");
+    }
+
+    @Test(priority = 3)
+    @Story("Login")
+    @Description("Verify that user can login and select sales system")
+    @Severity(SeverityLevel.CRITICAL)
+    @Owner("QA Team")
+    public void testLoginAndSelectSalesSystem() {
+        LogUtils.info("Executing testLoginAndSelectSalesSystem - Testing login and select sales system");
+        loginPage.loginWithSalesSystem();
+        loginPage.verifyLoginSale();
+        LogUtils.info("testLoginAndSelectSalesSystem completed successfully");
+        AllureManager.stepTestPassed("User successfully selected sales system");
     }
     
 
@@ -119,6 +135,7 @@ public class LoginTest extends BaseTest {
     public void testLoginWithEmptyPassword() {
         LogUtils.info("Executing testLoginWithEmptyPassword - Testing login with empty password field");
         loginPage.testEmptyPassword();
+        loginPage.verifyNullPassword();
         LogUtils.info("testLoginWithEmptyPassword completed successfully");
         AllureManager.stepTestPassed("Empty password field validation verified successfully");
     }
