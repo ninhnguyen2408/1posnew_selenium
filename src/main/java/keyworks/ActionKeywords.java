@@ -22,8 +22,7 @@ import java.util.List;
 
 public class ActionKeywords {
     private static int Timeout = 20;
-    private static double ThreadSleep = 0.5;
-    private static int PageLoadTimeout = 30;
+
 
     // Log console
     public static void logConsole(Object message) {
@@ -33,7 +32,7 @@ public class ActionKeywords {
     // Open URL
     @Step("Opening URL: {URL}")
     public static void openURL(String URL) {
-        DriverManager.getDriver().get(URL);
+        DriverManager.getDriver().get(URL); 
         logConsole("Navigate to: " + URL);
         ExtentTestManager.logMessage(Status.INFO, "Open URL: " + URL);
         AllureManager.stepOpenUrl(URL);
@@ -98,7 +97,10 @@ public class ActionKeywords {
             }
          }
         }
-      }
+        logConsole("Không tìm thấy phần tử sau " + maxRetries + " lần thử.");
+        return false;
+    }
+
 
     // Check element Displayed
     public static boolean checkElementDisplayed(By by) {
@@ -275,10 +277,10 @@ public class ActionKeywords {
         robot.keyRelease(KeyEvent.VK_ENTER);
 
         logConsole("Upload File with Local Form: " + filePath);
-//            if (ExtentTestManager.getTest() != null) {
-//                  logConsole("Upload File with Local Form: " + filePath);
-//            }
-//            AllureManager.saveTextLog("Upload File with Local Form: " + filePath);
+           if (ExtentTestManager.getTest() != null) {
+                 logConsole("Upload File with Local Form: " + filePath);
+           }
+           AllureManager.saveTextLog("Upload File with Local Form: " + filePath);
     }
 
     //Static droplist
