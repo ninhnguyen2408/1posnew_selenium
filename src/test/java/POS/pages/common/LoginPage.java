@@ -51,13 +51,23 @@ public class LoginPage extends  BasePage{
 
     public DashboardPage loginCMS(String email, String password) {
         LogUtils.info("Attempting to login with email: " + email);
+        performLoginAction(email, password);
+        String currentUrl = DriverManager.getDriver().getCurrentUrl();
+        if (currentUrl.contains("login")) {
+            LogUtils.warn("Login failed");
+        } else {
+            LogUtils.info("Login completed successfully");
+        }
+        return new DashboardPage();
+    }
+    
+    private void performLoginAction(String email, String password) {
         getBrowser();
         ActionKeywords.sendKeys(inputEmail, email);
         ActionKeywords.sendKeys(inputPassword, password);
         ActionKeywords.clickElement(buttonLogin);
         ActionKeywords.waitForPageLoaded();
-        LogUtils.info("Login completed successfully");
-        return new DashboardPage();
+        LogUtils.info("Login form submitted and page loaded");
     }
 
     public DashboardPage loginCMS() {
@@ -117,8 +127,6 @@ public class LoginPage extends  BasePage{
     public void verifyLoginSale() {
         boolean check = ActionKeywords.checkElementDisplayed(selectStore);
         Assert.assertTrue(check, "Login sales failed or select store not displayed.");
-        
-        ActionKeywords.sleep(2);
     }
 
     public void verifyNullEmail() {
@@ -134,9 +142,15 @@ public class LoginPage extends  BasePage{
         boolean check = ActionKeywords.checkElementDisplayed(errorMessageRequiredPassword);
         Assert.assertTrue(check, "Error message for required password not displayed.");
     }
-
-    private void verifySalesSystemURL() {
-        ActionKeywords.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://hdseafood.1erp.vn/choose-store", "Not on Sales System URL");
+    
+    public void verifyBothEmptyFields() {
+        LogUtils.info("Performing strict verification of both required field errors...");
+        boolean emailErrorDisplayed = ActionKeywords.checkElementDisplayed(errorMessageRequiredEmail);
+        boolean passwordErrorDisplayed = ActionKeywords.checkElementDisplayed(errorMessageRequiredPassword);     
+        Assert.assertTrue(emailErrorDisplayed, "Email required error message not displayed");
+        Assert.assertTrue(passwordErrorDisplayed, "Password required error message not displayed");
+        LogUtils.info("Both email and password required errors verified successfully");
+        ActionKeywords.sleep(1);
     }
     
     public void verifySystemSelectionPopup() {
@@ -147,33 +161,18 @@ public class LoginPage extends  BasePage{
         ActionKeywords.assertEquals(ActionKeywords.getTextElement(systemManagement), "Hệ thống quản trị", "Management system option text not match");
         ActionKeywords.assertEquals(ActionKeywords.getTextElement(systemSales), "Hệ thống bán hàng", "Sales system option text not match");
     }
-    
-    public void testEmptyEmail() {
-        getBrowser();
-        ActionKeywords.sendKeys(inputEmail, "");
-        ActionKeywords.sendKeys(inputPassword, ConfigData.Password);
-        verifyNullEmail();
-    }
-    
-    public void testEmptyPassword() {
-        getBrowser();
-        ActionKeywords.sendKeys(inputEmail, ConfigData.Email);
-        ActionKeywords.sendKeys(inputPassword, "");
-        verifyNullPassword();
-    }
-    
-    public void testBothEmptyFields() {
-        getBrowser();
-        ActionKeywords.sendKeys(inputEmail, "");
-        ActionKeywords.sendKeys(inputPassword, "");
-        verifyNullEmail();
-    }
 
+    
     public void verifyLoginFail() {
         ActionKeywords.checkElementDisplayed(alertMessage);
-        Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "Fail, NOT on the Login page");
-        ActionKeywords.assertEquals(ActionKeywords.getTextElement(alertMessage), "Đăng nhập thất bại\n" +
-                "Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần", "Content of alert message not match");
-        ActionKeywords.sleep(2);
+        String currentUrl = DriverManager.getDriver().getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("login"), "Fail, NOT on the Login page");
+        String actualErrorMessage = ActionKeywords.getTextElement(alertMessage);
+        String expectedErrorMessage = "Đăng nhập thất bại\n" +
+                "Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần";
+        
+        ActionKeywords.assertEquals(actualErrorMessage, expectedErrorMessage, "Content of alert message not match");
+        LogUtils.info("Error message content verified successfully");
+        ActionKeywords.sleep(1);
     }
 }
