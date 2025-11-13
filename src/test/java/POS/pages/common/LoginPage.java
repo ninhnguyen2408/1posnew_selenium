@@ -1,9 +1,8 @@
 package POS.pages.common;
 
 import constants.ConfigData;
+import constants.ErrorMessages;
 import keyworks.ActionKeywords;
-
-import java.awt.Desktop.Action;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -63,9 +62,9 @@ public class LoginPage extends  BasePage{
     
     private void performLoginAction(String email, String password) {
         getBrowser();
-        ActionKeywords.sendKeys(inputEmail, email);
-        ActionKeywords.sendKeys(inputPassword, password);
-        ActionKeywords.clickElement(buttonLogin);
+        enterEmail(email);
+        enterPassword(password);
+        clickLoginButton();
         ActionKeywords.waitForPageLoaded();
         LogUtils.info("Login form submitted and page loaded");
     }
@@ -152,15 +151,6 @@ public class LoginPage extends  BasePage{
         LogUtils.info("Both email and password required errors verified successfully");
         ActionKeywords.sleep(1);
     }
-    
-    public void verifySystemSelectionPopup() {
-        ActionKeywords.waitForElementVisible(systemManagement);
-        ActionKeywords.waitForElementVisible(systemSales);
-        ActionKeywords.checkElementDisplayed(systemManagement);
-        ActionKeywords.checkElementDisplayed(systemSales);
-        ActionKeywords.assertEquals(ActionKeywords.getTextElement(systemManagement), "Hệ thống quản trị", "Management system option text not match");
-        ActionKeywords.assertEquals(ActionKeywords.getTextElement(systemSales), "Hệ thống bán hàng", "Sales system option text not match");
-    }
 
     
     public void verifyLoginFail() {
@@ -168,10 +158,8 @@ public class LoginPage extends  BasePage{
         String currentUrl = DriverManager.getDriver().getCurrentUrl();
         Assert.assertTrue(currentUrl.contains("login"), "Fail, NOT on the Login page");
         String actualErrorMessage = ActionKeywords.getTextElement(alertMessage);
-        String expectedErrorMessage = "Đăng nhập thất bại\n" +
-                "Email/Số điện thoại hoặc mật khẩu không đúng. Tài khoản của bạn sẽ bị khóa nếu nhập sai 5 lần";
-        
-        ActionKeywords.assertEquals(actualErrorMessage, expectedErrorMessage, "Content of alert message not match");
+
+        ActionKeywords.assertEquals(actualErrorMessage, ErrorMessages.LOGIN_FAILED, "Content of alert message not match");
         LogUtils.info("Error message content verified successfully");
         ActionKeywords.sleep(1);
     }
